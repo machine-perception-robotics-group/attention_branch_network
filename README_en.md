@@ -21,15 +21,15 @@ Example of play command is as follows, but if you want to learn the detail of th
 Additionally, we have published the model files that are ResNet family with Attention Branch Network on CIFAR100 and ImageNet2012 Dataset. (Will be available)
 
 ### Models on CIFAR100 Dataset
-ResNet110 : http://***
-DenseNet : http://***
-Wide ResNet : http://***
-ResNeXt : http://***
+- ResNet110 : http://***
+- DenseNet : http://***
+- Wide ResNet : http://***
+- ResNeXt : http://***
 
 ### Models on ImageNet2012 Dataset
-ResNet50 : http://***
-ResNet101 : http://***
-ResNet152 : http://***
+- ResNet50 : http://***
+- ResNet101 : http://***
+- ResNet152 : http://***
 
 ### Performance of the ABN on CIFAR100
 
