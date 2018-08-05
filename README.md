@@ -17,15 +17,17 @@
 また，CIFAR100とImageNetで学習したResNet familyの学習済みモデルも公開しています．(こちらも近日中に公開します)
 
 Models on CIFAR100 Dataset
-ResNet110 : http://***
-DenseNet : http://***
-Wide ResNet : http://***
-ResNeXt : http://***
+
+- ResNet110 : http://***
+- DenseNet : http://***
+- Wide ResNet : http://***
+- ResNeXt : http://***
 
 Models on ImageNet2012 Dataset
-ResNet50 : http://***
-ResNet101 : http://***
-ResNet152 : http://***
+
+- ResNet50 : http://***
+- ResNet101 : http://***
+- ResNet152 : http://***
 
 Performance of the ABN on CIFAR100
 
