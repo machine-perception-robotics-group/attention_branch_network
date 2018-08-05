@@ -13,6 +13,11 @@
 
 実行コマンドの例は，以下のようになります．また，学習時のコマンドはベースのPyTorchと同様なので，詳細な実行コマンドは[ベースコードのreadme](https://github.com/bearpaw/pytorch-classification/blob/master/TRAINING.md)を参照してください．
 
+- 学習
+> python cifar.py -a resnet --dataset cifar100 --depth 110 --epochs 300 --schedule 150 225 --gamma 0.1 --wd 1e-4 --checkpoint checkpoints/cifar100/resnet-110 --gpu-id 1,2,3
+
+- 評価
+> python cifar.py -a resnet --dataset cifar100 --depth 110 --epochs 300 --schedule 150 225 --gamma 0.1 --wd 1e-4 --checkpoint checkpoints/cifar100/resnet-110 --gpu-id 1,2 --evaluate --resume checkpoints/cifar100/resnet-110/model_best.pth.tar
 
 ### Models on CIFAR100 Dataset
 また，CIFAR100とImageNetで学習したResNet familyの学習済みモデルも公開しています．(こちらも近日中に公開します)
