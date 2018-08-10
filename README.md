@@ -9,7 +9,7 @@ Write : [Hiroshi Fukui](https://github.com/Hiroshi-Fukui)
 
 ## Detail
 本プログラムはCIFAR100, ImageNetでの認識問題を対象にしています．また，ベースにした
-プログラムは，[PyTorchのこのコード](https://github.com/bearpaw/pytorch-classification/)をベースに，提案手法を構築しています．使用しているライブラリ等のバージョンは，以下のようになります．また，Dockerファイルを用意しているので，環境構築の際はDockerfileをビルドしてください(Dockerfileは近日中に公開します)．
+プログラムは，[PyTorchのこのコード](https://github.com/bearpaw/pytorch-classification/)をベースに，提案手法を構築しています．使用しているライブラリ等のバージョンは，以下のようになります．また，Dockerファイルを用意しているので，環境構築の際はDockerfileをビルドしてください．
 - PyTorch : 0.4.0
 - PyTorch vision
 
@@ -23,7 +23,7 @@ Write : [Hiroshi Fukui](https://github.com/Hiroshi-Fukui)
 > python cifar.py -a resnet --dataset cifar100 --depth 110 --epochs 300 --schedule 150 225 --gamma 0.1 --wd 1e-4 --checkpoint checkpoints/cifar100/resnet-110 --gpu-id 1,2 --evaluate --resume checkpoints/cifar100/resnet-110/model_best.pth.tar
 
 ### Models on CIFAR100 Dataset
-また，CIFAR100とImageNetで学習したResNet familyの学習済みモデルも公開しています．(こちらも近日中に公開します)
+また，CIFAR100とImageNetで学習したResNet familyの学習済みモデルも公開しています．
 
 - ResNet110 : https://www.dropbox.com/sh/6mkk6e9c4qanznz/AACsvn_52Evk9ONjM5yWW8Yra?dl=0
 - DenseNet : https://www.dropbox.com/sh/j572oriksv30g4n/AACoH7pQ8sntnZUr0kU2LNbLa?dl=0
