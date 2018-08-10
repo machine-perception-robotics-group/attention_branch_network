@@ -25,10 +25,10 @@ Write : [Hiroshi Fukui](https://github.com/Hiroshi-Fukui)
 ### Models on CIFAR100 Dataset
 また，CIFAR100とImageNetで学習したResNet familyの学習済みモデルも公開しています．(こちらも近日中に公開します)
 
-- ResNet110 : http://***
-- DenseNet : http://***
-- Wide ResNet : http://***
-- ResNeXt : http://***
+- ResNet110 : https://www.dropbox.com/sh/6mkk6e9c4qanznz/AACsvn_52Evk9ONjM5yWW8Yra?dl=0
+- DenseNet : https://www.dropbox.com/sh/j572oriksv30g4n/AACoH7pQ8sntnZUr0kU2LNbLa?dl=0
+- Wide ResNet : https://www.dropbox.com/sh/ou4nbl4mii54p0e/AACwN41B584l9yUzN7CAX_8ja?dl=0
+- ResNeXt : https://www.dropbox.com/sh/ds0uk0ileffad7h/AAC-nILHLRzFEy06ohBkVOVha?dl=0
 
 ### Models on ImageNet2012 Dataset
 
