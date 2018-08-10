@@ -32,9 +32,9 @@ Write : [Hiroshi Fukui](https://github.com/Hiroshi-Fukui)
 
 ### Models on ImageNet2012 Dataset
 
-- ResNet50 : http://***
-- ResNet101 : http://***
-- ResNet152 : http://***
+- ResNet50 : https://www.dropbox.com/sh/tuo90s1uqmbk1vd/AAAksM9uPT5u-eViAe-PXIqsa?dl=0
+- ResNet101 : https://www.dropbox.com/sh/8vzv7ov59xb5wle/AABaE24vo3Kc-VuSKbOUsZiua?dl=0
+- ResNet152 : https://www.dropbox.com/sh/senw3akoud9cten/AACXOBuiNCWq6wPjl4EIVmhHa?dl=0
 
 ### Performance of the ABN on CIFAR100
 
