@@ -9,7 +9,7 @@ Write : [Hiroshi Fukui](https://github.com/Hiroshi-Fukui)
 
 ## Detail
 本プログラムはCIFAR100, ImageNetでの認識問題を対象にしています．また，ベースにした
-プログラムは，[PyTorchのこのコード](https://github.com/bearpaw/pytorch-classification/)をベースに，提案手法を構築しています．使用しているライブラリ等のバージョンは，以下のようになります．また，Dockerファイルを用意しているので，環境構築の際はDockerfileをビルドしてください．
+プログラムは，[PyTorchのこのコード](https://github.com/bearpaw/pytorch-classification/)をベースに，提案手法を構築しています．使用しているライブラリ等のバージョンは，以下のようになります．また，[Dockerファイル](https://www.dropbox.com/sh/evn9792hoi75yix/AAC1xMNxKw6Qkus6VCzxrhfVa?dl=0)を用意しているので，環境構築の際はDockerfileをビルドしてください．
 - PyTorch : 0.4.0
 - PyTorch vision
 - OpenCV
