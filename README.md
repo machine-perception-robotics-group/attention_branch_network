@@ -12,6 +12,7 @@ Write : [Hiroshi Fukui](https://github.com/Hiroshi-Fukui)
 プログラムは，[PyTorchのこのコード](https://github.com/bearpaw/pytorch-classification/)をベースに，提案手法を構築しています．使用しているライブラリ等のバージョンは，以下のようになります．また，Dockerファイルを用意しているので，環境構築の際はDockerfileをビルドしてください．
 - PyTorch : 0.4.0
 - PyTorch vision
+- OpenCV
 
 
 実行コマンドの例は，以下のようになります．また，学習時のコマンドはベースのPyTorchと同様なので，詳細な実行コマンドは[ベースコードのreadme](https://github.com/bearpaw/pytorch-classification/blob/master/TRAINING.md)を参照してください．
