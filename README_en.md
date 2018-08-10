@@ -9,6 +9,7 @@ Our Attention Branch Network(ABN) can improve recognition performance and visual
 Our source code is based on [https://github.com/bearpaw/pytorch-classification/](https://github.com/bearpaw/pytorch-classification/) with PyTorch. Requirements of PyTorch is as follows, and we published the Docker file. If you need our environment, please build Dockerfile!!
 - PyTorch : 0.4.0
 - PyTorch vision
+- OpenCV
 
 Example of play command is as follows, but if you want to learn the detail of the construction of play command, please refer the base code at [https://github.com/bearpaw/pytorch-classification/blob/master/TRAINING.md](https://github.com/bearpaw/pytorch-classification/blob/master/TRAINING.md).
 
