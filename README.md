@@ -4,7 +4,7 @@ Write : [Hiroshi Fukui](https://github.com/Hiroshi-Fukui)
 [english ver.](https://github.com/machine-perception-robotics-group/attention_branch_network/blob/master/README_en.md)
 
 ## Abstract
-このレポジトリは，Attention Branch Networkのオリジナルコードです．Attention Branch Network(ABN)は，Attention機構により画像認識の高精度化と，CNNにおける注視領域の可視化を行うネットワークです．本手法の詳細は，論文([現在はMIRU時のポスターになってます](https://drive.google.com/file/d/11uMkpMgb1vtcG78cDDwfwC-fowkdrqVU/view?usp=sharing))を参考にして下さい．
+このレポジトリは，Attention Branch Networkのオリジナルコードです．Attention Branch Network(ABN)は，Attention機構により画像認識の高精度化と，CNNにおける注視領域の可視化を行うネットワークです．本手法の詳細は，論文([現在はMIRU時のスライドになってます](https://www.slideshare.net/greentea1125/miru2018-global-average-poolingattention-branch-network))を参考にして下さい．
 
 
 ## Detail
