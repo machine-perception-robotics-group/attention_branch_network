@@ -52,3 +52,6 @@ Write : [Hiroshi Fukui](https://github.com/Hiroshi-Fukui)
 | ResNet50    |        23.1 |        24.1 |
 | ResNet101   |        21.8 |        22.5 |
 | ResNet152   |        21.4 |        22.2 |
+
+### Visualization of Attention map
+![overview image](https://github.com/machine-perception-robotics-group/attention_branch_network/blob/master/example.jpeg)
