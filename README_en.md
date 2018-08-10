@@ -6,7 +6,7 @@ This repository is contained source code that is original Attention Branch Netwo
 Our Attention Branch Network(ABN) can improve recognition performance and visualize fixation of Deep Convolutional Neural Network on various single image recognition tasks. Structure of ABN is constructed by three modules that are Feature extractor, Attention branch, and Perception branch. The Feature extractor and Perception branch are made by the baseline network. Attention branch is made with the structure of Class Activation Mapping. Detail of our ABN is written at paper ([This link is slide at MIRU2018 in Japanese](https://www.slideshare.net/greentea1125/miru2018-global-average-poolingattention-branch-network))!!
 
 ## Detail
-Our source code is based on [https://github.com/bearpaw/pytorch-classification/](https://github.com/bearpaw/pytorch-classification/) with PyTorch. Requirements of PyTorch is as follows, and we published the Docker file. If you need our environment, please build Dockerfile!!
+Our source code is based on [https://github.com/bearpaw/pytorch-classification/](https://github.com/bearpaw/pytorch-classification/) with PyTorch. Requirements of PyTorch is as follows, and we published the [Docker file](https://www.dropbox.com/sh/evn9792hoi75yix/AAC1xMNxKw6Qkus6VCzxrhfVa?dl=0). If you need our environment, please build Dockerfile!!
 - PyTorch : 0.4.0
 - PyTorch vision
 - OpenCV
