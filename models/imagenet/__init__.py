@@ -1,4 +1,4 @@
 from __future__ import absolute_import
 
 from .resnet import *
-from .resnext import *
+from .senet_resnet import *
