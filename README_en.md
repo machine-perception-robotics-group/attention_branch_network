@@ -2,16 +2,17 @@
 Write : [Hiroshi Fukui](https://github.com/Hiroshi-Fukui)
 
 ## Abstract
-This repository is contained source code that is original Attention Branch Network.
-Our Attention Branch Network(ABN) can improve recognition performance and visualize fixation of Deep Convolutional Neural Network on various single image recognition tasks. Structure of ABN is constructed by three modules that are Feature extractor, Attention branch, and Perception branch. The Feature extractor and Perception branch are made by the baseline network. Attention branch is made with the structure of Class Activation Mapping. Detail of our ABN is written at paper ([This link is slide at MIRU2018 in Japanese](https://www.slideshare.net/greentea1125/miru2018-global-average-poolingattention-branch-network))!!
+This repository is contained source code that is the original Attention Branch Network.
+Our Attention Branch Network is designed to extend a top-down visual explanation model by including a branch sttructure with an attention mechanism. ABN improves the performance of CNN and visual explanation simultaneously due to the attention map during a forward pass. 
+[This link is the arXiv paper]())!!
 
 ## Detail
-Our source code is based on [https://github.com/bearpaw/pytorch-classification/](https://github.com/bearpaw/pytorch-classification/) with PyTorch. Requirements of PyTorch is as follows, and we published the [Docker file](https://www.dropbox.com/sh/evn9792hoi75yix/AAC1xMNxKw6Qkus6VCzxrhfVa?dl=0). If you need our environment, please build Dockerfile!!
+Our source code is based on [https://github.com/bearpaw/pytorch-classification/](https://github.com/bearpaw/pytorch-classification/) with PyTorch. Requirements of PyTorch version is as follows, and we published the [Docker file](https://www.dropbox.com/sh/evn9792hoi75yix/AAC1xMNxKw6Qkus6VCzxrhfVa?dl=0). If you need the Docker, please using the Dockerfile!!
 - PyTorch : 0.4.0
 - PyTorch vision
 - OpenCV
 
-Example of play command is as follows, but if you want to learn the detail of the construction of play command, please refer the base code at [https://github.com/bearpaw/pytorch-classification/blob/master/TRAINING.md](https://github.com/bearpaw/pytorch-classification/blob/master/TRAINING.md).
+Example of run command is as follows, but if you want to learn the detail of the run command, please refer the base code at [https://github.com/bearpaw/pytorch-classification/blob/master/TRAINING.md](https://github.com/bearpaw/pytorch-classification/blob/master/TRAINING.md).
 
 - Training
 > python cifar.py -a resnet --dataset cifar100 --depth 110 --epochs 300 --schedule 150 225 --gamma 0.1 --wd 1e-4 --checkpoint checkpoints/cifar100/resnet-110 --gpu-id 1,2,3
@@ -20,7 +21,7 @@ Example of play command is as follows, but if you want to learn the detail of th
 > python cifar.py -a resnet --dataset cifar100 --depth 110 --epochs 300 --schedule 150 225 --gamma 0.1 --wd 1e-4 --checkpoint checkpoints/cifar100/resnet-110 --gpu-id 1,2 --evaluate --resume checkpoints/cifar100/resnet-110/model_best.pth.tar
 
 
-Additionally, we have published the model files that are ResNet family with Attention Branch Network on CIFAR100 and ImageNet2012 Dataset. 
+Additionally, we have published the model files of ABN, which are ResNet family of each depth on CIFAR100 and ImageNet2012 dataset. 
 
 ### Models on CIFAR100 Dataset
 - ResNet110 : https://www.dropbox.com/sh/6mkk6e9c4qanznz/AACsvn_52Evk9ONjM5yWW8Yra?dl=0
@@ -54,7 +55,7 @@ Additionally, we have published the model files that are ResNet family with Atte
 | ResNet152   |        21.4 |        22.2 |
 
 
-### Visualization of Attention map
+### Example of Attention map
 ![overview image](https://github.com/machine-perception-robotics-group/attention_branch_network/blob/master/example.jpeg)
 
 
