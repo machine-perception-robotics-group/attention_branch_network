@@ -4,7 +4,7 @@ Writer : [Hiroshi Fukui](https://github.com/Hiroshi-Fukui)
 ## Abstract
 This repository is contained source code that is the original Attention Branch Network on image classification.
 Our Attention Branch Network is designed to extend a top-down visual explanation model by including a branch sttructure with an attention mechanism. ABN improves the performance of CNN and visual explanation simultaneously due to the attention map during a forward pass. 
-[This link is the arXiv paper]())!!
+[This link is the arXiv paper]()!!
 
 ## Citation
 TBA
