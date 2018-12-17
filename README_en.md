@@ -7,7 +7,7 @@ Our Attention Branch Network is designed to extend a top-down visual explanation
 [This link is the arXiv paper]())!!
 
 ## Detail
-Our source code is based on [https://github.com/bearpaw/pytorch-classification/](https://github.com/bearpaw/pytorch-classification/) with PyTorch. Requirements of PyTorch version is as follows, and we published the [Docker file](https://www.dropbox.com/sh/evn9792hoi75yix/AAC1xMNxKw6Qkus6VCzxrhfVa?dl=0). If you need the Docker, please using the Dockerfile!!
+Our source code is based on [https://github.com/bearpaw/pytorch-classification/](https://github.com/bearpaw/pytorch-classification/) with PyTorch. Requirements of PyTorch version is as follows, and we published the [Docker file](https://www.dropbox.com/sh/evn9792hoi75yix/AAC1xMNxKw6Qkus6VCzxrhfVa?dl=0). If you need the Docker, please use the Dockerfile!!
 - PyTorch : 0.4.0
 - PyTorch vision
 - OpenCV
