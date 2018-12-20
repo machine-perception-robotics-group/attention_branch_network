@@ -3,25 +3,27 @@ Writer : [Hiroshi Fukui](https://github.com/Hiroshi-Fukui)
 
 ## Abstract
 This repository is contained source code that is the original Attention Branch Network on image classification.
-Our Attention Branch Network is designed to extend a top-down visual explanation model by including a branch sttructure with an attention mechanism. ABN improves the performance of CNN and visual explanation simultaneously due to the attention map during a forward pass. 
-[This link is the arXiv paper]()!!
+Our Attention Branch Network is designed to extend a top-down visual explanation model by including a branch structure with an attention mechanism. ABN improves the performance of CNN and visual explanation simultaneously due to the attention map during a forward pass. 
+[This link is the arXiv paper]().
 
 ## Citation
 TBA
 
 
 ## Detail
-Our source code is based on [https://github.com/bearpaw/pytorch-classification/](https://github.com/bearpaw/pytorch-classification/) with PyTorch. Requirements of PyTorch version is as follows, and we published the [Docker file](https://www.dropbox.com/sh/evn9792hoi75yix/AAC1xMNxKw6Qkus6VCzxrhfVa?dl=0). If you need the Docker, please use our Dockerfile!!
+Our source code is based on [https://github.com/bearpaw/pytorch-classification/](https://github.com/bearpaw/pytorch-classification/) with PyTorch. Requirements of PyTorch version is as follows, and we published the [Docker file](https://www.dropbox.com/sh/evn9792hoi75yix/AAC1xMNxKw6Qkus6VCzxrhfVa?dl=0). If you need the Docker, please use our Dockerfile.
 - PyTorch : 0.4.0
 - PyTorch vision : 0.2.1
 
-Example of run command is as follows, but if you try the other models or ImageNet, please refer the base code at [https://github.com/bearpaw/pytorch-classification/blob/master/TRAINING.md](https://github.com/bearpaw/pytorch-classification/blob/master/TRAINING.md).
+Example of run command is as follows, but if you try the other models or ImageNet, please refer the README at [https://github.com/bearpaw/pytorch-classification/blob/master/TRAINING.md](https://github.com/bearpaw/pytorch-classification/blob/master/TRAINING.md).
 
 - Training
-> python cifar.py -a resnet --dataset cifar100 --depth 110 --epochs 300 --schedule 150 225 --gamma 0.1 --wd 1e-4 --checkpoint checkpoints/cifar100/resnet-110 --gpu-id 1,2,3
+> python cifar.py -a resnet --dataset cifar100 --depth 110 --epochs 300 --schedule 150 225 --gamma 0.1 --wd 1e-4 --checkpoint checkpoints/cifar100/resnet-110 --gpu-id 0,1
+> python imagenet.py -a resnet152 --data ../../../../dataset/imagenet_data/ --epochs 90 --schedule 31 61 --gamma 0.1 -c checkpoints/imagenet/resnet152 --gpu-id 0,1,2,3 --test-batch 100
 
 - Evaluation
-> python cifar.py -a resnet --dataset cifar100 --depth 110 --epochs 300 --schedule 150 225 --gamma 0.1 --wd 1e-4 --checkpoint checkpoints/cifar100/resnet-110 --gpu-id 1,2 --evaluate --resume checkpoints/cifar100/resnet-110/model_best.pth.tar
+> python cifar.py -a resnet --dataset cifar100 --depth 110 --epochs 300 --schedule 150 225 --gamma 0.1 --wd 1e-4 --checkpoint checkpoints/cifar100/resnet-110 --gpu-id 0,1 --evaluate --resume checkpoints/cifar100/resnet-110/model_best.pth.tar
+> python imagenet.py -a resnet152 --data ../../../../dataset/imagenet_data/ --epochs 90 --schedule 31 61 --gamma 0.1 -c checkpoints/imagenet/resnet152 --gpu-id 4,5,6 --test-batch 10 --evaluate --resume checkpoints/imagenet/resnet152/model_best.pth.tar
 
 
 Additionally, we have published the model files of ABN, which are ResNet family models on CIFAR100 and ImageNet2012 dataset. 
