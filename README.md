@@ -6,12 +6,12 @@ This repository contains the source code of Attention Branch Network for image c
 
 ## Citation
 
-@article{fukui2018,
-	author = {Hiroshi Fukui and Tsubasa Hirakawa and Takayoshi Yamashita and Hironobu Fujiyoshi},
-	title = {Attention Branch Network: Learning of Attention Mechanism for Visual Explanation},
-	journal = {arXiv preprint arXiv:1812.10025},
-	year = {2018}
-}
+@article{fukui2018,  
+	author = {Hiroshi Fukui and Tsubasa Hirakawa and Takayoshi Yamashita and Hironobu Fujiyoshi},  
+	title = {Attention Branch Network: Learning of Attention Mechanism for Visual Explanation},  
+	journal = {arXiv preprint arXiv:1812.10025},  
+	year = {2018}  
+}  
 
 
 ## Detail
