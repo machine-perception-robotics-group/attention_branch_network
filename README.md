@@ -2,7 +2,7 @@
 Writer : [Hiroshi Fukui](https://github.com/Hiroshi-Fukui)
 
 ## Abstract
-This repository contains the source code of Attention Branch Network for image classification. The attention branch network is designed to extend the top-down visual explanation model by introducing a branch structure with an attention mechanism. ABN improves CNN’s performance and visual explanation at the same time by gnerating attention maps in the forward pass. [This link is the arXiv paper.](https://arxiv.org/abs/1812.10025)
+This repository contains the source code of Attention Branch Network for image classification. The attention branch network is designed to extend the top-down visual explanation model by introducing a branch structure with an attention mechanism. ABN improves CNN’s performance and visual explanation at the same time by generating attention maps in the forward pass. [This link is the arXiv paper.](https://arxiv.org/abs/1812.10025)
 
 ## Citation
 
@@ -15,7 +15,7 @@ This repository contains the source code of Attention Branch Network for image c
 
 
 ## Detail
-Our source code is based on [https://github.com/bearpaw/pytorch-classification/](https://github.com/bearpaw/pytorch-classification/) with PyTorch. Requirements of PyTorch version is as follows, and we published the [Docker file](https://www.dropbox.com/sh/evn9792hoi75yix/AAC1xMNxKw6Qkus6VCzxrhfVa?dl=0). If you need the Docker, please use our Dockerfile.
+Our source code is based on [https://github.com/bearpaw/pytorch-classification/](https://github.com/bearpaw/pytorch-classification/) with PyTorch. Requirements of PyTorch version is as follows, and we published the [Dockerfile](https://www.dropbox.com/sh/evn9792hoi75yix/AAC1xMNxKw6Qkus6VCzxrhfVa?dl=0). If you need the Docker, please use our Dockerfile.
 - PyTorch : 0.4.0
 - PyTorch vision : 0.2.1
 
@@ -32,7 +32,7 @@ Example of run command is as follows, but if you try the other models or ImageNe
 > python imagenet.py -a resnet152 --data ../../../../dataset/imagenet_data/ --epochs 90 --schedule 31 61 --gamma 0.1 -c checkpoints/imagenet/resnet152 --gpu-id 4,5,6 --test-batch 10 --evaluate --resume checkpoints/imagenet/resnet152/model_best.pth.tar
 
 
-Additionally, we have published the model files of ABN, which are ResNet family models on CIFAR100 and ImageNet2012 dataset. 
+Additionally, we have published the model files of ABN, which are ResNet family models on CIFAR100 and ImageNet2012 dataset.
 
 ### Models on CIFAR100 Dataset
 - ResNet110 : https://www.dropbox.com/sh/6mkk6e9c4qanznz/AACsvn_52Evk9ONjM5yWW8Yra?dl=0
@@ -68,5 +68,3 @@ Additionally, we have published the model files of ABN, which are ResNet family 
 
 ### Example of Attention map
 ![overview image](https://github.com/machine-perception-robotics-group/attention_branch_network/blob/master/example.jpeg)
-
-
