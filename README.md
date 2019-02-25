@@ -15,7 +15,7 @@ This repository contains the source code of Attention Branch Network for image c
 
 
 ## Detail
-Our source code is based on [https://github.com/bearpaw/pytorch-classification/](https://github.com/bearpaw/pytorch-classification/) with PyTorch. Requirements of PyTorch version is as follows, and we published the [Dockerfile](https://www.dropbox.com/sh/evn9792hoi75yix/AAC1xMNxKw6Qkus6VCzxrhfVa?dl=0). If you need the Docker, please use our Dockerfile.
+Our source code is based on [https://github.com/bearpaw/pytorch-classification/](https://github.com/bearpaw/pytorch-classification/) with PyTorch. Requirements of PyTorch version is as follows, and we published the [Dockerfile](https://github.com/machine-perception-robotics-group/attention_branch_network/tree/master/docker/Dockerfile). If you need the Docker, please use our Dockerfile.
 - PyTorch : 0.4.0
 - PyTorch vision : 0.2.1
 
