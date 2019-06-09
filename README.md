@@ -6,13 +6,23 @@ This repository contains the source code of Attention Branch Network for image c
 
 ## Citation
 
+```
+@article{fukui2018,
+	author = {Hiroshi Fukui and Tsubasa Hirakawa and Takayoshi Yamashita and Hironobu Fujiyoshi},
+	title = {Attention Branch Network: Learning of Attention Mechanism for Visual Explanation},
+	journal = {Computer Vision and Pattern Recognition},
+	year = {2019},
+	pages = {10705-10714}
+}
+```
+```
 @article{fukui2018,  
 	author = {Hiroshi Fukui and Tsubasa Hirakawa and Takayoshi Yamashita and Hironobu Fujiyoshi},  
 	title = {Attention Branch Network: Learning of Attention Mechanism for Visual Explanation},  
 	journal = {arXiv preprint arXiv:1812.10025},  
 	year = {2018}  
 }  
-
+```
 
 ## Detail
 Our source code is based on [https://github.com/bearpaw/pytorch-classification/](https://github.com/bearpaw/pytorch-classification/) with PyTorch. Requirements of PyTorch version is as follows, and we published the [Docker file](https://www.dropbox.com/sh/evn9792hoi75yix/AAC1xMNxKw6Qkus6VCzxrhfVa?dl=0). If you need the Docker, please use our Dockerfile.
