@@ -5,3 +5,5 @@ __pycache__/
 
 data/
 checkpoints/
+
+docker/debug.sh
