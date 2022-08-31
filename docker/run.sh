@@ -1,9 +1,14 @@
 #!/bin/bash
 
 # run.sh
-# Copyright (c) Tsubasa HIRAKAWA, 2020
+# Copyright (c) Tsubasa HIRAKAWA, 2022
 
 # usage: ./run.sh [container name] [volume mount 1] [volume mount 2] ...
+
+
+# docker image name (please choose one of the followings)
+# imagename="cumprg/abn:pt040_epoint"
+imagename="cumprg/abn:pt1130_epoint"
 
 
 # check command line args
@@ -31,5 +36,4 @@ fi
 
 nvidia-docker run -ti --rm -u $(id -u):$(id -g)\
     --ipc=host --name=${1} ${mounts} \
-    cumprg/abn:pt040_epoint
-
+    ${imagename}

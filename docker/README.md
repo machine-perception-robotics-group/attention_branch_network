@@ -1,21 +1,48 @@
 # Docker for Attention Branch Network
 
 
+## Change Log
+
+* 15 Apr 2020: Add Docker environment (torch 0.4.0)
+* xx Sep 2022: Update PyTorch version (torch 1.13.0)
+
+
 ## Download image from DockerHub
+
+We prepare two docker images for a certain PyTorch version.
+1. A docker image that runs the daemon as **a root user**.
+2. A docker image that runs the daemon as **a genral user** with the same user ID in host OS.
 
 You can download docker images by following commands:
 
-This image runs docker daemon as root user.
+### torch 1.13.0
+
+The base image is `nvcr.io/nvidia/pytorch:22.07-py3` downloaded from NGC container.
+
+If you want to run docker daemon as *root user.
+
+**Docker image as a root user**
+```bash
+docker pull nvcr.io/nvidia/pytorch:22.07-py3
+```
+
+**Docker image as a general user**
+```bash
+docker pull cumprg/abn:pt1130_epoint
+```
+
+### torch 0.4.0
+
+**Docker image as a root user**
 ```bash
 docker pull cumprg/abn:pt040
 ```
 
-This image runs docker daemon as a general user with the same user ID in host OS.
+**Docker image as a general user**
 The detailed usage is described in the bottom (see Run).
 ```bash
 docker pull cumprg/abn:pt040_epoint
 ```
-
 
 ## Build image
 
@@ -28,9 +55,17 @@ If you want to build on your environment by yourself, please run following comma
 
 ## Run docker with entrypoint
 
-By using `cumprg/abn:pt040_epoint`, you can run docker with a general user with the same user ID in host OS.
+By using `cumprg/abn:pt040_epoint` or `cumprg/abn:pt1130_epoint`, you can run docker with a general user with the same user ID in host OS.
 
-You can run a docker daemon by following command. (User ID is automatically set.)
+First, you need change `imagename` in `runs.sh` as follows:
+
+```bash
+# docker image name (please choose one of the followings)
+# imagename="cumprg/abn:pt040_epoint"
+imagename="cumprg/abn:pt1130_epoint"
+```
+
+Then, you can run a docker daemon by following command. (User ID is automatically set.)
 
 ```bash
 ./run.sh [container name] [volume mount 1] [volume mount 2] ...
@@ -39,5 +74,5 @@ You can run a docker daemon by following command. (User ID is automatically set.
 If you want run manually, please add user ID option. For example, 
 
 ```bash
-nvidia-docker run -ti --rm -u [uid]:[gid] cumprg/abn:pt040_epoint
+nvidia-docker run -ti --rm -u [uid]:[gid] [docker image name]
 ```

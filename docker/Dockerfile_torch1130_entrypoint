@@ -1,0 +1,30 @@
+FROM nvcr.io/nvidia/pytorch:22.07-py3
+LABEL maintainer="Tsubasa Hirakawa <hirakawa@mprg.cs.chubu.ac.jp>"
+
+
+# install sudo for entrypoint script
+RUN apt-get update && apt-get install -y sudo
+
+
+# release ports
+EXPOSE 6006 8888
+
+
+# user settings ===========================================
+# add general user
+ENV USER_NAME=dockeruser
+ENV HOME=/home/${USER_NAME}
+
+# add user to sudo group
+WORKDIR /etc/sudoers.d
+RUN echo "${USER_NAME} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/${USER_NAME}
+
+# change permissions so that a general user can add user and group
+# resotre permission in entrypoint.sh
+RUN chmod u+s /usr/sbin/useradd && chmod u+s /usr/sbin/groupadd
+
+WORKDIR /
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["bash"]
+# =========================================================
