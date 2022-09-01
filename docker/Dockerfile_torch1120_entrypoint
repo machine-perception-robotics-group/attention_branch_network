@@ -1,4 +1,4 @@
-FROM nvcr.io/nvidia/pytorch:22.07-py3
+FROM nvcr.io/nvidia/pytorch:22.05-py3
 LABEL maintainer="Tsubasa Hirakawa <hirakawa@mprg.cs.chubu.ac.jp>"
 
 

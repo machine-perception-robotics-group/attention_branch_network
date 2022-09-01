@@ -8,7 +8,7 @@
 
 # docker image name (please choose one of the followings)
 # imagename="cumprg/abn:pt040_epoint"
-imagename="cumprg/abn:pt1130_epoint"
+imagename="cumprg/abn:pt1120_epoint"
 
 
 # check command line args
@@ -19,7 +19,8 @@ if [ $# -lt 1 ]; then
 fi
 
 
-echo "run docker image (cumprg/abn:pt040_epoint) ..."
+echo "run docker image ..."
+echo "    image: ${imagename}"
 echo "    container name: ${1}"
 
 

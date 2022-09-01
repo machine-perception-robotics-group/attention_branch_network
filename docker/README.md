@@ -4,7 +4,7 @@
 ## Change Log
 
 * 15 Apr 2020: Add Docker environment (torch 0.4.0)
-* xx Sep 2022: Update PyTorch version (torch 1.13.0)
+* 01 Sep 2022: Update PyTorch version (torch 1.12.0)
 
 
 ## Download image from DockerHub
@@ -15,20 +15,20 @@ We prepare two docker images for a certain PyTorch version.
 
 You can download docker images by following commands:
 
-### torch 1.13.0
+### torch 1.12.0
 
-The base image is `nvcr.io/nvidia/pytorch:22.07-py3` downloaded from NGC container.
+The base image is `nvcr.io/nvidia/pytorch:22.05-py3` downloaded from NGC container.
 
 If you want to run docker daemon as *root user.
 
 **Docker image as a root user**
 ```bash
-docker pull nvcr.io/nvidia/pytorch:22.07-py3
+docker pull nvcr.io/nvidia/pytorch:22.05-py3
 ```
 
 **Docker image as a general user**
 ```bash
-docker pull cumprg/abn:pt1130_epoint
+docker pull cumprg/abn:pt1120_epoint
 ```
 
 ### torch 0.4.0
@@ -55,14 +55,14 @@ If you want to build on your environment by yourself, please run following comma
 
 ## Run docker with entrypoint
 
-By using `cumprg/abn:pt040_epoint` or `cumprg/abn:pt1130_epoint`, you can run docker with a general user with the same user ID in host OS.
+By using `cumprg/abn:pt040_epoint` or `cumprg/abn:pt1120_epoint`, you can run docker with a general user with the same user ID in host OS.
 
 First, you need change `imagename` in `runs.sh` as follows:
 
 ```bash
 # docker image name (please choose one of the followings)
 # imagename="cumprg/abn:pt040_epoint"
-imagename="cumprg/abn:pt1130_epoint"
+imagename="cumprg/abn:pt1120_epoint"
 ```
 
 Then, you can run a docker daemon by following command. (User ID is automatically set.)
