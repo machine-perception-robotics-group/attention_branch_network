@@ -46,9 +46,11 @@ If you find this repository is useful. Please cite the following references.
 
 ## Enviroment
 Our source code is based on [https://github.com/bearpaw/pytorch-classification/](https://github.com/bearpaw/pytorch-classification/) implemented with PyTorch. We are grateful for the author!
-Requirements of PyTorch version are as follows:
-- PyTorch : 0.4.0
-- PyTorch vision : 0.2.1
+
+Now, we updated PyTorch version from the original implementation.
+Required PyTorch version is as follows:
+- PyTorch : 1.12.0
+- PyTorch vision : 0.13.0
 
 ### Docker
 We prepared Docker environments for ABN. You quickly start to use Docker and run scripts.
