@@ -108,7 +108,7 @@ We have published the model files of ABN, which are ResNet family models on CIFA
 | ResNet152   |        21.4 |        22.2 |
 
 ### Examples of attention map
-![overview image](./example.jpeg)
+![overview image](./figure/example.jpeg)
 
 
 

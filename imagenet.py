@@ -11,7 +11,7 @@ import time
 import numpy as np
 import random
 import pickle
-# import cv2
+import cv2
 
 import torch
 import torch.nn as nn
@@ -126,7 +126,7 @@ def main():
 
     train_loader = torch.utils.data.DataLoader(
         datasets.ImageFolder(traindir, transforms.Compose([
-            transforms.RandomSizedCrop(224),
+            transforms.RandomResizedCrop(224),
             transforms.RandomHorizontalFlip(),
             transforms.ToTensor(),
             normalize,
@@ -136,7 +136,7 @@ def main():
 
     val_loader = torch.utils.data.DataLoader(
         datasets.ImageFolder(valdir, transforms.Compose([
-            transforms.Scale(256),
+            transforms.Resize(256),
             transforms.CenterCrop(224),
             transforms.ToTensor(),
             normalize,
@@ -241,7 +241,7 @@ def train(train_loader, model, criterion, optimizer, epoch, use_cuda):
         data_time.update(time.time() - end)
 
         if use_cuda:
-            inputs, targets = inputs.cuda(), targets.cuda(async=True)
+            inputs, targets = inputs.cuda(), targets.cuda(non_blocking=True)
         inputs, targets = torch.autograd.Variable(inputs), torch.autograd.Variable(targets)
 
         # compute output
@@ -254,9 +254,9 @@ def train(train_loader, model, criterion, optimizer, epoch, use_cuda):
 
         # measure accuracy and record loss
         prec1, prec5 = accuracy(outputs.data, targets.data, topk=(1, 5))
-        losses.update(loss.data[0], inputs.size(0))
-        top1.update(prec1[0], inputs.size(0))
-        top5.update(prec5[0], inputs.size(0))
+        losses.update(loss.item(), inputs.size(0))
+        top1.update(prec1.item(), inputs.size(0))
+        top5.update(prec5.item(), inputs.size(0))
 
         # compute gradient and do SGD step
         optimizer.zero_grad()
@@ -285,22 +285,13 @@ def train(train_loader, model, criterion, optimizer, epoch, use_cuda):
 
 def test(val_loader, model, criterion, epoch, use_cuda):
     global best_acc
-    softmax = nn.Softmax()
+    softmax = nn.Softmax(dim=1)
 
     batch_time = AverageMeter()
     data_time = AverageMeter()
     losses = AverageMeter()
     top1 = AverageMeter()
     top5 = AverageMeter()
-
-    fc = open('categorie.txt', 'r')
-    cate_name = []
-    for line in fc:
-        idx_item, name_item = line[:-2].split(':')
-        sp_name = name_item.split(',')
-        name_item = sp_name[0]
-        cate_name.append(name_item)
-    cate_name = np.asarray(cate_name)
 
     # switch to evaluate mode
     model.eval()
@@ -315,13 +306,14 @@ def test(val_loader, model, criterion, epoch, use_cuda):
 
         if use_cuda:
             inputs, targets = inputs.cuda(), targets.cuda()
-        inputs, targets = torch.autograd.Variable(inputs, volatile=True), torch.autograd.Variable(targets)
+        inputs, targets = torch.autograd.Variable(inputs), torch.autograd.Variable(targets)
 
         # compute output
-        _, outputs, attention = model(inputs)
-        outputs = softmax(outputs)
-        loss = criterion(outputs, targets)
-        # attention, fe, per = attention
+        with torch.no_grad():
+            _, outputs, attention = model(inputs)
+            outputs = softmax(outputs)
+            loss = criterion(outputs, targets)
+            attention, fe, per = attention
 
         c_att = attention.data.cpu()
         c_att = c_att.numpy()
@@ -358,9 +350,9 @@ def test(val_loader, model, criterion, epoch, use_cuda):
         top5_list = outputs.data.topk(5, 1, True, True)
         sample_idx = 0
 
-        losses.update(loss.data[0], inputs.size(0))
-        top1.update(prec1[0], inputs.size(0))
-        top5.update(prec5[0], inputs.size(0))
+        losses.update(loss.item(), inputs.size(0))
+        top1.update(prec1.item(), inputs.size(0))
+        top5.update(prec5.item(), inputs.size(0))
 
         # measure elapsed time
         batch_time.update(time.time() - end)
