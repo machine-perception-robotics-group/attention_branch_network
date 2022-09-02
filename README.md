@@ -5,6 +5,11 @@ Writer : [Hiroshi Fukui](https://github.com/Hiroshi-Fukui)
 Maintainer : [Tsubasa Hirakawa](https://github.com/thirakawa)
 
 
+### Change Log
+
+* 15 Apr 2020: Add Docker environment (torch 0.4.0) [[0.4.0 implementation](https://github.com/machine-perception-robotics-group/attention_branch_network/tree/v1.0_0.4.0)]
+* 02 Sep 2022: Update PyTorch version (torch 1.12.0)
+
 
 
 ## Abstract
