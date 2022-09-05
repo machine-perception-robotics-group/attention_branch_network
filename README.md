@@ -13,6 +13,7 @@ Maintainer : [Tsubasa Hirakawa](https://github.com/thirakawa)
 
 
 ## Abstract
+
 This repository contains the source code of Attention Branch Network for image classification. The attention branch network is designed to extend the top-down visual explanation model by introducing a branch structure with an attention mechanism. ABN improves CNN’s performance and visual explanation at the same time by gnerating attention maps in the forward pass.
 
 [[CVF open access](http://openaccess.thecvf.com/content_CVPR_2019/html/Fukui_Attention_Branch_Network_Learning_of_Attention_Mechanism_for_Visual_Explanation_CVPR_2019_paper.html)]
@@ -23,7 +24,8 @@ This repository contains the source code of Attention Branch Network for image c
 
 ## Citation
 If you find this repository is useful. Please cite the following references.
-```
+
+```bibtex
 @article{fukui2018cvpr,
     author = {Hiroshi Fukui and Tsubasa Hirakawa and Takayoshi Yamashita and Hironobu Fujiyoshi},
     title = {Attention Branch Network: Learning of Attention Mechanism for Visual Explanation},
@@ -32,7 +34,8 @@ If you find this repository is useful. Please cite the following references.
     pages = {10705-10714}
 }
 ```
-```
+
+```bibtex
 @article{fukui2018arxiv,
     author = {Hiroshi Fukui and Tsubasa Hirakawa and Takayoshi Yamashita and Hironobu Fujiyoshi},
     title = {Attention Branch Network: Learning of Attention Mechanism for Visual Explanation},
@@ -41,47 +44,49 @@ If you find this repository is useful. Please cite the following references.
 }  
 ```
 
-
-
-
 ## Enviroment
+
 Our source code is based on [https://github.com/bearpaw/pytorch-classification/](https://github.com/bearpaw/pytorch-classification/) implemented with PyTorch. We are grateful for the author!
 
-Now, we updated PyTorch version from the original implementation.
+Now, we have updated PyTorch version (`1.12.0`) from the original implementation (`0.4.0`).
 Required PyTorch version is as follows:
 - PyTorch : 1.12.0
 - PyTorch vision : 0.13.0
 
 ### Docker
-We prepared Docker environments for ABN. You quickly start to use Docker and run scripts.
+
+We prepared Docker environments for ABN.
+You can quickly start to use Docker and run scripts.
 For more details, please see [docker/README.md](https://github.com/machine-perception-robotics-group/attention_branch_network/blob/master/docker/README.md).
 
-
-
-
 ## Execution
+
 Example of run command is as follows:
 
 #### Training
+
 ```bash
+# CIFAR-100 dataset
 python3 cifar.py -a resnet --dataset cifar100 --depth 110 --epochs 300 --schedule 150 225 --gamma 0.1 --wd 1e-4 --checkpoint checkpoints/cifar100/resnet-110 --gpu-id 0,1
 
+# ImageNet dataset
 python3 imagenet.py -a resnet152 --data ../../dataset/imagenet_data/ --epochs 90 --schedule 31 61 --gamma 0.1 -c checkpoints/imagenet/resnet152 --gpu-id 4,5,6,7 --test-batch 100
 ```
 
 #### Evaluation
+
 ```bash
+# CIFAR-100 dataset
 python3 cifar.py -a resnet --dataset cifar100 --depth 110 --epochs 300 --schedule 150 225 --gamma 0.1 --wd 1e-4 --checkpoint checkpoints/cifar100/resnet-110 --gpu-id 0,1 --evaluate --resume checkpoints/cifar100/resnet-110/model_best.pth.tar
 
+# ImageNet dataset
 python3 imagenet.py -a resnet152 --data ../../../../dataset/imagenet_data/ --epochs 90 --schedule 31 61 --gamma 0.1 -c checkpoints/imagenet/resnet152 --gpu-id 4,5,6 --test-batch 10 --evaluate --resume checkpoints/imagenet/resnet152/model_best.pth.tar
 ```
 
-If you try the other models or ImageNet, please see [TRAINING.md](https://github.com/machine-perception-robotics-group/attention_branch_network/blob/master/TRAINING.md).
-
-
-
+If you try the other models, please see [TRAINING.md](https://github.com/machine-perception-robotics-group/attention_branch_network/blob/master/TRAINING.md).
 
 ## Trained models
+
 We have published the model files of ABN, which are ResNet family models on CIFAR100 and ImageNet2012 dataset. 
 
 ### Models on CIFAR100 Dataset
@@ -95,11 +100,10 @@ We have published the model files of ABN, which are ResNet family models on CIFA
 - [ResNet101](https://drive.google.com/open?id=1B5jBHTfskKAgNpsFm9iADn1lskn2UWyk)
 - [ResNet152](https://drive.google.com/open?id=1ZFq0ubZitsuOwPhrQopQOqVW5-KXflFr)
 
-
-
-
 ## Performances
+
 ### CIFAR100
+
 |  | top-1 error (ABN) | top-1 error ([original](https://github.com/bearpaw/pytorch-classification)) |
 |:------------|------------:|------------:|
 | ResNet110   |        22.5 |        24.1 |
@@ -108,6 +112,7 @@ We have published the model files of ABN, which are ResNet family models on CIFA
 | ResNeXt     |        17.7 |        18.3 |
 
 ### ImageNet2012
+
 |  | top-1 error (ABN) | top-1 error ([original](https://github.com/bearpaw/pytorch-classification)) |
 |:------------|------------:|------------:|
 | ResNet50    |        23.1 |        24.1 |
@@ -115,6 +120,7 @@ We have published the model files of ABN, which are ResNet family models on CIFA
 | ResNet152   |        21.4 |        22.2 |
 
 ### Examples of attention map
+
 ![overview image](./figure/example.jpeg)
 
 

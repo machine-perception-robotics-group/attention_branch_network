@@ -1,4 +1,4 @@
-# NOTE for Update
+# NOTE
 
 
 ## `target.cuda(async=True)`
