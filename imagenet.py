@@ -335,11 +335,17 @@ def test(val_loader, model, criterion, epoch, use_cuda):
             jet_map = cv2.applyColorMap(vis_map, cv2.COLORMAP_JET)
             jet_map = cv2.add(v_img, jet_map)
 
-            out_dir = path.join('output')
+            out_dir = path.join('output') 
             if not path.exists(out_dir):
                 os.mkdir(out_dir)
+            attention_dir = path.join(out_dir, 'attention') # the source code does not create attention and raw dir and cause fail to wirte image
+            if not path.exists(attention_dir):
+                os.mkdir(attention_dir)
             out_path = path.join(out_dir, 'attention', '{0:06d}.png'.format(count))
             cv2.imwrite(out_path, jet_map)
+            raw_dir = path.join(out_dir, 'raw')
+            if not path.exists(raw_dir):
+                os.mkdir(raw_dir)
             out_path = path.join(out_dir, 'raw', '{0:06d}.png'.format(count))
             cv2.imwrite(out_path, v_img)
 
